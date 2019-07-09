@@ -70,7 +70,7 @@ object Utils {
                 "ю" -> "yu"
                 "я" -> "ya"
                 " " -> divider
-                else -> ""
+                else -> c.toString()
             }
             result+=if(c.isUpperCase()){temp.toUpperCase()}else{temp}
         }

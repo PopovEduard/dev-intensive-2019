@@ -86,4 +86,55 @@ object Utils {
                 if(lastName.isNullOrBlank()){""}else{lastName.firstOrNull().toString().toUpperCase()}
         return initials
     }
+
+    fun toEndingSecond(number: Float): String{
+        return when(number.toLong().toString().last()){
+            '1' -> "секунду"
+            '2', '3', '4' -> "секунды"
+            else -> "секунд"
+        }
+    }
+
+    fun toEndingMinute(number: Float): String{
+        return when(number.toLong().toString().last()){
+            '1' -> "минуту"
+            '2', '3', '4' -> "минуты"
+            else -> "минут"
+        }
+    }
+
+    fun toEndingHours(number: Float): String{
+        return when(number.toLong().toString().last()){
+            '1' -> "час"
+            '2', '3', '4' -> "часа"
+            else -> "часов"
+        }
+    }
+
+    fun toEndingDays(number: Float): String{
+        return when(number.toLong().toString().last()){
+            '1' -> "день"
+            '2', '3', '4' -> "дня"
+            else -> "дней"
+        }
+    }
+
+
+    fun toMinuteString(number: Float, isPositive: Boolean): String{
+        val numberL:Long = number.toLong()
+        return if(isPositive) "$numberL ${toEndingMinute(number)} назад"
+        else "через $numberL ${toEndingMinute(number)}"
+    }
+
+    fun toHoursString(number: Float, isPositive: Boolean): String{
+        val numberL:Long = number.toLong()
+        return if(isPositive) "$numberL ${toEndingHours(number)} назад"
+        else "через $numberL ${toEndingHours(number)}"
+    }
+
+    fun toDaysString(number: Float, isPositive: Boolean): String{
+        val numberL:Long = number.toLong()
+        return if(isPositive) "$numberL ${toEndingDays(number)} назад"
+        else "через $numberL ${toEndingDays(number)}"
+    }
 }

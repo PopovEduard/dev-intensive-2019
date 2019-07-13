@@ -4,19 +4,19 @@ import android.text.TextUtils.isEmpty
 
 object Utils {
     fun parseFullName(fullName:String?): Pair<String?,String?>{
-        var firstName: String? = null
-        var lastName: String? = null
-        var parts: List<String>? = fullName?.split(" ")
+        val firstName: String?
+        val lastName: String?
+        val parts: List<String>? = fullName?.split(" ")
         if (parts!= null) {
-            if(parts?.getOrNull(0).isNullOrEmpty()){
+            if(parts.getOrNull(0).isNullOrEmpty()){
                 firstName = null
             } else {
-                firstName = parts?.getOrNull(0)
+                firstName = parts.getOrNull(0)
             }
-            if(parts?.getOrNull(1).isNullOrEmpty()){
+            if(parts.getOrNull(1).isNullOrEmpty()){
                 lastName = null
             } else {
-                lastName = parts?.getOrNull(1)
+                lastName = parts.getOrNull(1)
             }
         } else{
             firstName = null
@@ -31,7 +31,7 @@ object Utils {
 
     fun transliteration(payload: String, divider: String = " "): String? {
         var result: String? = ""
-        var temp: String? = ""
+        var temp: String
         if(payload.isNullOrBlank()) result=""
         else
         for (c in payload){

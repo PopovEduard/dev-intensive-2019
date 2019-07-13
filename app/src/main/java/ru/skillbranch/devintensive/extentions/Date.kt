@@ -58,13 +58,10 @@ enum class TimeUnits{
 }
 
 fun TimeUnits.plural(number: Long):String{
-    var result: String=""
-    val current = this
-    result=when(this){
+    return when(this){
         TimeUnits.SECOND -> "$number "+Utils.toEndingSecond(number.toFloat())
         TimeUnits.MINUTE -> "$number "+Utils.toEndingMinute(number.toFloat())
         TimeUnits.HOUR -> "$number "+Utils.toEndingHours(number.toFloat())
         TimeUnits.DAY -> "$number "+Utils.toEndingDays(number.toFloat())
     }
-    return result
 }

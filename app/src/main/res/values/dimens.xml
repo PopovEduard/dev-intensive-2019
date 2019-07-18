@@ -11,4 +11,9 @@
     <dimen name="spacing_normal_16">16dp</dimen>
     <dimen name="spacing_small_8">8dp</dimen>
     <dimen name="spacing_tiny_4">4dp</dimen>
+
+    <!-- font sizes -->
+    <dimen name="Image_button_size_large_24">24dp</dimen>
+    <dimen name="Image_button_size_normal_16">16dp</dimen>
+
 </resources>

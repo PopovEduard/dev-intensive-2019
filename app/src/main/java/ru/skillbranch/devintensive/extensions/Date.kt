@@ -1,4 +1,4 @@
-package ru.skillbranch.devintensive.extentions
+package ru.skillbranch.devintensive.extensions
 
 
 import java.util.*
@@ -141,16 +141,17 @@ enum class TimeUnits{
     SECOND,
     MINUTE,
     HOUR,
-    DAY
-}
+    DAY;
+    fun plural(number: Long):String{
+        return when(this){
+            TimeUnits.SECOND -> "$number "+ toEndingSecond(number.toFloat())
+            TimeUnits.MINUTE -> "$number "+ toEndingMinute(number.toFloat())
+            TimeUnits.HOUR -> "$number "+ toEndingHours(number.toFloat())
+            TimeUnits.DAY -> "$number "+ toEndingDays(number.toFloat())
+        }
 
-fun TimeUnits.plural(number: Long):String{
-    return when(this){
-        TimeUnits.SECOND -> "$number "+ toEndingSecond(number.toFloat())
-        TimeUnits.MINUTE -> "$number "+ toEndingMinute(number.toFloat())
-        TimeUnits.HOUR -> "$number "+ toEndingHours(number.toFloat())
-        TimeUnits.DAY -> "$number "+ toEndingDays(number.toFloat())
     }
+
 
 
 

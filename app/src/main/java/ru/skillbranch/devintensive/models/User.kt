@@ -40,19 +40,19 @@ data class User (
 
     //constructor(builder: Builder): this(builder.id())
     class Builder(
-        var id:String = "",
-        var firstName:String? = "",
-        var lastName:String? = "",
-        var avatar:String? = "",
+        var id:String = "0",
+        var firstName:String? = null,
+        var lastName:String? = null,
+        var avatar:String? = null,
         var rating:Int = 0,
         var respect:Int = 0,
         var lastVisit:Date? = Date(),
         var isOnline:Boolean = false
     ){
         fun id(id:String) = apply { this.id = id }
-        fun firstName(firstName:String?) = apply { this.firstName = firstName }
-        fun lastName(lastName:String?) = apply { this.lastName = lastName }
-        fun avatar(avatar:String?) = apply { this.avatar = avatar }
+        fun firstName(firstName:String? = null) = apply { this.firstName = firstName }
+        fun lastName(lastName:String? = null) = apply { this.lastName = lastName }
+        fun avatar(avatar:String? = null) = apply { this.avatar = avatar }
         fun rating(rating:Int) = apply { this.rating = rating }
         fun respect(respect:Int) = apply { this.respect = respect }
         fun lastVisit(lastVisit:Date?) = apply { this.lastVisit = lastVisit }
